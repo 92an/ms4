@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,6 +17,7 @@
     {% block core_css %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" integrity="sha512-cKoGpmS4czjv58PNt1YTHxg0wUDlctZyp9KUxQpdbAft+XqnyKvDvcGX0QYCgCohQenOuyGSl8l1f7/+axAqyg==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">    
     {% endblock %}
 
     {% block extra_css %}
@@ -31,11 +34,12 @@
     
     <title>Artsey</title>
   </head>
+
   <body>
-    <header class="container-fluid fixed-top">
+    <header id="heading_container" class="container-fluid fixed-top mb-2">
         <div class="row justify-content-between my-auto">
             <div class="col-md-4 col-3">
-                logo
+                <a href="{% url 'home' %}" class=""><img src="/media/logo.png" alt="logo"></a>
             </div>
             <div class="col-md-4 col-9">
                 <ul class="list-inline list-unstyled text-center">
@@ -83,6 +87,9 @@
         <div class="message-container"></div>
     {% endif %}
  
+    {% block page_header %}
+    {% endblock %}
+
     {% block content %}
     {% endblock %}
 
