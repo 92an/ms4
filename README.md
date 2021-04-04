@@ -1,45 +1,303 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Table of Content
 
-Welcome 92an,
+- [Deployment:](#Deployment)
+    - [Preperation:](#Preperation)
+    - [Deployment with Heroku CLI:](#Deployment-with-Heroku-CLI)
+    - [Deployment with Github Automatic Deployment:](#Deployment-with-Github-Automatic-Deployment)
+    - [More Information:](#More-Information)
+- [Technologies Used:](#technologies-used)
+    - [Languages:](#languages)
+    - [Libraries and Frameworks:](#libraries-and-frameworks)
+    - [Tools](#tools)
+- [Project Purpose:](#project-purpose)
+- [User Stories:](#user-stories)
+- [Admin functionality:](#Admin-functionality)
+- [Design:](#Design)
+- [Future Features:](#Future-Features) 
+- [Testing:](#Testing)
+    - [Validation:](#Validation)
+        - [HTML:](#HTML)
+        - [CSS:](#CSS)
+        - [CSS:](#JS)
+    - [Responsive Testing:](#Responsive-Testing)
+    - [Functionality:](#Functionality)
+- [Bugs:](#Bugs)
+    - [username responsive profile in navigation:](#username-responsive-profile-in-navigation)
+    - [categories stopped functioning after first filter:](#categories-stopped-functioning-after-first-filter)
+- [References:](#References)
+    - [inspiration:](#inspiration)
+    - [Images:](#Images)
+    - [Logo:](#Logo)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+# Deployment:
 
-## Gitpod Reminders
+The deployment of this project is done on heroku and 
+the code is written using gitpod.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Assuming that you have created a MongoDB account with corresponding
+shema to be used in the project. 
 
-`python3 -m http.server`
+Assuming that the critical key value pairs that are confidential 
+are stored in a env.py file that is not pushed to github.
 
-A blue button should appear to click: *Make Public*,
+## Preperation:
 
-Another blue button should appear to click: *Open Browser*.
+1. Log in to Heroku and create a "New App" with a unique name
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+2. Before deployment we have to inform heroku what dependencies 
+our project has in a txt file called requirements. To do this use the
+line of code below. 
 
-A blue button should appear to click: *Make Public*,
+```
+pip3 freeze --local > requirements.txt
+```
+3. The next step is to create a Procfile using the following command.
+```
+echo web: python run.py > Procfile
+```
+4. Push these files to github.
 
-Another blue button should appear to click: *Open Browser*.
+5. The key value pairs that are hidden in the "env.py" file 
+need to be specified in the settings field. In Heroku go to
+settings and reveal "config vars" then specify the keys there.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Deployment with Heroku CLI: 
 
-## Updates Since The Instructional Video
+1. Install Heroku CLI.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+2. log in to Heroku using the following command.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+```
+$ heroku login
+```
+3. (if working on a computer locally) clone repository. 
+```
+$ heroku git:clone -a econhub
+$ cd econhub
+```
+4. To implement changes to the code and pushing them to Heroku
+use the following lines of code.
+```
+$ git add .
+$ git commit -m "Commit comments here!"
+$ git push heroku master
+```
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Deployment with Github Automatic Deployment:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+1. Go to the GitHub tab in the deploy section on Heroku.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+2. Type in you GitHub username and the corresponding repository that you want to deploy.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+3. Enable automatic deployment.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+4. Select the Branch you want to deploy, and click on the deploy branch button.
 
---------
+## More Information:
 
-Happy coding!
+For any additional information please refer to the deployment 
+documentation which can be found [here](https://devcenter.heroku.com/categories/deployment)
+
+How to clone git reposirtories can be found [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+# Technologies Used:
+
+## Languages:
+* HTML5
+* CSS3 
+* Javascript
+* Python
+    * For dependencies I refer to the requirements.txt file
+* Jinja Templating language
+
+## Libraries and Frameworks:
+* Materialize
+* Jquery
+* Flask
+* Font Awesome
+
+## Tools
+* Gitpod
+* Git
+* Github
+* Heroku
+* Chrome Dev Tools
+* Mongo DB
+
+# Project Purpose:
+
+To create a platform to spread, share, and discuss economic ideas. 
+A place where academics and other people with interest in economics can look up terms, 
+such as models and theories, using a community-built dictionary. Enable discussion in various chatrooms dedicated to specific topics.
+
+# Target Audience:
+
+* Academics
+* Economics, Finance, and Business students
+* Other people interested in economics
+
+# User stories:
+
+### See excel file
+
+# Design
+
+The purpose of this project is to appeal to an academic side, 
+so I chose a grayscale theme, with simple buttons to give a 
+text/bookish feeling. A light grey background on the body making 
+the white cards pop like papers on a desk. It has links to 
+economics resources at the bottom rather than generic social 
+media links, sticking to the theming. Images reflect economic 
+nature, such as charts, banks, and trading. The homepage was made 
+in an effort to inspire economic reasoning by providing some 
+wisdom from famous thinkers.
+
+# Future Features
+
+These features were not considered due to time constraints
+
+* more backend logic to check for admin users rather than relying on the front end Menu
+* change admin to a bolean category, to enable multiple users to be admins rather than admin name
+* more modern design on chattroom
+* Source page to link economic data from example the OECD to facilitate study.
+* adding subcategories such as Finance > Techincal analysis
+* way to contact administrators
+* way for adminstrators to contact users
+* confirmation modals for delete functions and edit functions
+
+# Testing
+
+## Validation
+
+#### HTML
+Validated with https://validator.w3.org/
+However it does not like jinja templating language
+* [x] homepage.html
+* [x] terms.html
+* [x] chattrooms.html
+* [x] micro_chatt.html
+* [x] macro_chatt.html
+* [x] political_chatt.html
+* [x] student_chatt.html
+* [x] register.html
+* [x] login.html
+* [x] profile.html
+* [x] add_terms.html
+* [x] categories.html
+* [x] add_categories.html
+
+#### CSS
+Validated with https://jigsaw.w3.org/css-validator/
+* [x] style.css
+#### JS
+Validated with https://jshint.com/
+* [x] script.js
+* [x] chatt_refresh.js
+
+## Responsive Testing
+Done on google chrome only and is the recomended browser
+
+* Mobile S 320px
+* Mobile M 375px
+* Mobile L 425px
+* Tablet 768px
+* Laptop 1024px
+* Laptop L 1440px
+
+
+|Design Test|Mobile S|Mobile M|Mobile L|
+|-----------|:--------:|:--------:|:--------:|
+|homepage.html|poor|ok|ok|
+|terms.html|poor|ok|ok|
+|chattrooms.html|poor|ok|ok|
+|micro_chatt.html|poor|ok|ok|
+|macro_chatt.html|poor|ok|ok|
+|political_chatt.html|poor|ok|ok|
+|student_chatt.html|poor|ok|ok|
+|register.html|poor|ok|ok|
+|login.html|poor|ok|ok|
+|profile.html|poor|ok|ok|
+|add_terms.html|poor|ok|ok|
+|categories.html|poor|ok|ok|
+|add_categories.html|poor|ok|ok|
+
+<p>&nbsp;</p>
+
+|Design Test|Tablet|Laptop|Laptop L|
+|-----------|:------:|:------:|:--------:|
+|homepage.html|ok|ok|ok|
+|terms.html|ok|ok|ok|
+|chattrooms.html|ok|ok|ok|
+|micro_chatt.html|ok|ok|ok|
+|macro_chatt.html|ok|ok|ok|
+|political_chatt.html|ok|ok|ok|
+|student_chatt.html|ok|ok|ok|
+|register.html|ok|ok|ok|
+|login.html|ok|ok|ok|
+|profile.html|ok|ok|ok|
+|add_terms.html|ok|ok|ok|
+|categories.html|ok|ok|ok|
+|add_categories.ok|ok|ok|ok|
+
+<p>&nbsp;</p>
+
+Tested device formats:
+
+* Moto G4
+* Galaxy S5
+* Pixel 2
+* Pixel 2 XL
+* iPhone 5/SE
+* iPhone 6/7/8
+* iPhone 6/7/8 Plus
+* iPhone X
+* iPad
+* iPad Pro
+* Surface Duo
+* Galaxy Fold
+
+**NOTE that is is not ideal to operate on the smalest screen.
+Though functional the is some overflow issue and is rather impractical
+on smaller screens. Though since it is expeted that the user is someone
+working on a laptop, or studying mobile devices are not the main device
+that the use might use.
+
+## Functionality
+
+|Function|status|
+|-----------|:------:|
+|Menubar is dynamically changing based on who is logged in|ok|
+|Only admin can see category section|ok|
+|Only admin can see all tasks in profile section to delete or edit|ok|
+|Users can only see their own terms in their profile to delete or edit|ok|
+|Register user function works|ok|
+|Login function works|ok|
+|Log out works|ok|
+|Forms have a cancel button to return|ok|
+|Terms can be added to the dictionary in the profile section|ok|
+|Terms can be updated in the dictionary in the profile section|ok|
+|Terms can be deleted from the dictionary in the profile section|ok|
+|Terms can read in the dictionary|ok|
+|User can enter chattrooms|ok|
+|User can leave chattrooms|ok|
+|User can communicate in chattrooms|ok|
+|Admin can alter all terms|ok|
+|Admin can add categories|ok|
+|Admin can delete categories|ok|
+
+# References:
+
+## inspiration
+
+simple art store
+
+## Images
+
+
+
+## Logo:
+
+Created using an online platform:
+https://howtostartanllc.com/logo-maker?trugdlgg1&gclid=Cj0KCQiAwf39BRCCARIsALXWETyYp7IHpeyaZ6fTY8V6deaA-XzK0N1Dz-VB9KUrkg_MKkxOGINyFzgaAkR0EALw_wcB 
+
