@@ -294,10 +294,8 @@ simple art store
 
 ## Images
 
+Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1836478">Pexels</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1836478">Pixabay</a>
+Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3256055">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3256055">Pixabay</a>
 
 
-## Logo:
-
-Created using an online platform:
-https://howtostartanllc.com/logo-maker?trugdlgg1&gclid=Cj0KCQiAwf39BRCCARIsALXWETyYp7IHpeyaZ6fTY8V6deaA-XzK0N1Dz-VB9KUrkg_MKkxOGINyFzgaAkR0EALw_wcB 
 

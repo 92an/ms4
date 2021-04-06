@@ -74,7 +74,7 @@ html {
     position: relative;
 }
 
-#navigation_menu > li:hover {
+#navigation_menu li:hover {
     background-color: white;
     color: black;
 }
