@@ -14,9 +14,9 @@ class Artwork(models.Model):
     canvas_dimension = models.CharField(max_length=30)
     canvas_type = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    price_discounted = models.DecimalField(max_digits=6, decimal_places=2)
+    price_discounted = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     review = models.TextField(blank=True)
-    image = models.URLField(max_length=1500)
+    image = models.ImageField(null=True)
 
     def __str__(self):
         return self.title
