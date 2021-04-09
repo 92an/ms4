@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Artwork
 
 # Create your views here.
@@ -14,3 +14,15 @@ def artwork(request):
     }
 
     return render(request, "artwork/artwork.html", context)
+
+
+def artwork_detail(request, artwork_id):
+    """A detailed view of a product"""
+
+    artworks = get_object_or_404(Artwork, pk=artwork_id)
+
+    context = {
+        "artworks": artworks,
+    }
+
+    return render(request, "artwork/artwork_detail.html", context)

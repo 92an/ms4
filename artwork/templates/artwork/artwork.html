@@ -29,10 +29,10 @@
                         <p class="card-text main-text px-4">Product Price: <span class="disscounted">${{ artwork.price }}</span></p>
                         <p class="card-text main-text px-4">Product Discounted Price: <span class="price">${{ artwork.price_discounted }}</span></p>                    
                         {% else %}
-                        <p class="card-text main-text px-4">Product Price: <span class="price">${{ artwork.price }}</span></p>
                         <br>
+                        <p class="card-text main-text px-4 mt-3">Product Price: <span class="price">${{ artwork.price }}</span></p>
                         {% endif %}
-                        <a class="btn btn-dark capitalize">view details</a>
+                        <a href="{% url 'artwork_detail' artwork.id %}" class="btn btn-dark capitalize">view details</a>
                         <a class="btn btn-dark capitalize float-right">add to cart</a>
                     </div>
                 </div>

@@ -112,7 +112,17 @@ html {
     color: green;
 }
 
+/* Detail page */
 
+.details-container {
+    background-color: antiquewhite;
+}
+
+
+.details-image-container img {
+    width: 100%;
+    position: relative;
+}
 
 /* media queries */
 @media screen and (min-width: 1100px) {

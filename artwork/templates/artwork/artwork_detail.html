@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container page_header_container my-2">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center heading capitalize">Art Store</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container-fluid details-container my-4">
+        <div class="row">
+            <div class="col-md-6 details-image-container py-4">
+                <img src="/media/{{ artworks.image }}" alt="{{ artwork.id}}">
+            </div>
+            <div class="col-md-6 px-4 py-4">
+                <h2 class="heading">{{ artworks.title}}</h2>
+                <p>{{artworks.description}}</p>
+                <br>
+                <br>
+                <h5 class="heading">Medium: {{ artworks.medium}}</h5>
+                <h5 class="heading">Canvas Type: {{ artworks.canvas_type}}</h5>
+                <h5 class="heading">Canvas Size: {{ artworks.canvas_dimension}}</h5>
+                <br>
+                {% if artwork.price_discounted %}
+                    <p class="main-text">Product Price: <span class="disscounted">${{ artworks.price }}</span></p>
+                    <p class="main-text">Product Discounted Price: <span class="price">${{ artworks.price_discounted }}</span></p>                    
+                {% else %}
+                    <p class="main-text">Product Price: <span class="price">${{ artworks.price }}</span></p>
+                    <br>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
