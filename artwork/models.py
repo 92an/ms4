@@ -1,11 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+
 class Medium(models.Model):
     name = models.CharField(max_length=250)
 
     def __str__(self):
         return self.name
+
 
 class Artwork(models.Model):
     medium = models.ForeignKey("Medium", null=True, blank=True, on_delete=models.SET_NULL)
@@ -20,4 +23,5 @@ class Artwork(models.Model):
 
     def __str__(self):
         return self.title
+
 

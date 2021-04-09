@@ -46,7 +46,7 @@ html {
     flex: 1 0 auto;
   }
 
-/* heading and footer*/
+/* heading and footer */
 
 #heading_container {
     position: relative;
@@ -91,6 +91,27 @@ html {
 .socialmedia_links li a i:hover {
     color: yellow;  
 }
+
+
+/* Store page */
+
+.product_image {
+    height: 300px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.disscounted {
+    text-decoration: line-through;
+}
+
+.price {
+    font-weight: 600;
+    color: green;
+}
+
 
 
 /* media queries */

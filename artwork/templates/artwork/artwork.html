@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container page_header_container my-2">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center heading capitalize">Art Store</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container my-2">
+        <div class="row">
+            {% for artwork in artworks %}
+            <div class="col-md-6 my-4">
+                <div class="card pb-3">
+                    <img src="/media/{{ artwork.image }}" alt="item-image" class="card-img-top product_image">
+                    <h3 class="card-title heading mt-2 px-4">{{ artwork.title }}</h3>
+                    {% if artwork.price_discounted %}
+                    <span class="badge bg-dark text-white">On Sale</span>
+                    {% else %}
+                    <span class="badge bg-dark text-dark">not on sale</span>
+                    {% endif %}
+                    <div class="card-body">
+                        {% if artwork.price_discounted %}
+                        <p class="card-text main-text px-4">Product Price: <span class="disscounted">${{ artwork.price }}</span></p>
+                        <p class="card-text main-text px-4">Product Discounted Price: <span class="price">${{ artwork.price_discounted }}</span></p>                    
+                        {% else %}
+                        <p class="card-text main-text px-4">Product Price: <span class="price">${{ artwork.price }}</span></p>
+                        <br>
+                        {% endif %}
+                        <a class="btn btn-dark capitalize">view details</a>
+                        <a class="btn btn-dark capitalize float-right">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
