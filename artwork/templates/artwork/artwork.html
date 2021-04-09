@@ -2,16 +2,45 @@
 {% load static %}
 
 {% block page_header %}
+
     <div class="container page_header_container my-2">
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center heading capitalize">Art Store</h2>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <form method="GET" action="{% url 'artwork' %}" class="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control w-80" id="search" name="q" placeholder="Search">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-dark">Search</button>
+                            </div>
+                        </div>
+                    </div>       
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+            </div>
+            <div class="col-md-auto align-center">
+                <a href="{% url 'artwork' %}?medium=Oil" class="btn btn-dark">Oil</a>
+                <a href="{% url 'artwork' %}?medium=Acrylics" class="btn btn-dark">Acrylics</a>
+                <a href="{% url 'artwork' %}?medium=Watercolor" class="btn btn-dark">Watercolor</a>
+                <a href="{% url 'artwork' %}?medium=Oil,Acrylics,Watercolor" class="btn btn-dark">All</a>
+            </div>
+            <div class="col-md">
+            </div>
+        </div>
     </div>
+
 {% endblock %}
 
 {% block content %}
+
     <div class="container my-2">
         <div class="row">
             {% for artwork in artworks %}
@@ -40,4 +69,5 @@
             {% endfor %}
         </div>
     </div>
+
 {% endblock %}
