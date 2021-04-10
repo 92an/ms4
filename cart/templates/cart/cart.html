@@ -15,13 +15,51 @@
             <hr>
         </div>
     </div>
-
     <div class="row">
         <div class="col">
             {% if cart_items %}
-                <div class="table-responsive">
-                    {{ cart_items }}
-                </div>
+            <div class="table-responsive">    
+                <table class="table my-2">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart_items %}
+                        <tr>
+                            <td scope="row">
+                                <img src="/media/{{ item.artwork.image }}" alt="{{ artwork.id}}">
+                            </td>
+                            <td>
+                                {{ item.artwork.title}}
+                            </td>
+                            <td>
+                                {{ item.quantity }}
+                            </td>
+                            <td>
+                                {% if item.artwork.price_discounted %}
+                                    {{ item.total_discount }}
+                                {% else %}
+                                    {{ item.total }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <!-- cart footer -->
+            <div class="align-right">
+                <h5><strong class="heading uppercase">Cart Total: ${{ total|floatformat:2 }}</strong></h5>
+                <a href="{% url 'artwork' %}" class="btn btn-dark mb-3 mt-3">Keep Shopping</a>
+                <a href="" class="btn btn-dark">Secure Checkout</a>
+            </div>
+
             {% else %}
                 <p class="main-text">There are no items in the cart</p>
                 <a href="{% url 'artwork' %}" class="btn btn-dark">Keep Shopping</a>

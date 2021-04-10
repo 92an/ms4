@@ -129,10 +129,20 @@ html {
     position: relative;
 }
 
+/* cart page */
+
+table tbody tr td img {
+    height: 50px;
+}
+
 /* media queries */
 @media screen and (min-width: 1100px) {
     #logo_img {
     height: 75px;
     width: 150px;
     }
+
+    table tbody tr td img {
+    height: 300px;
+}
 }
