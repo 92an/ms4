@@ -38,7 +38,18 @@
                                 {{ item.artwork.title}}
                             </td>
                             <td>
-                                {{ item.quantity }}
+                                <form method="POST" action="" class="form update-form">
+                                    {% csrf_token %}
+                                    <div class="form-row w-50 number-input">
+                                        <input class="form-control" type="number" name="quantity" value="{{item.quantity}}" min="1" max="99" data-item_id="{{ item.artwork.id }}" id="id_quant_{{ item.artwork.id }}">
+                                    </div>
+                                    <br>
+                                    <div class="form-row">
+                                        <a href="{% url 'artwork' %}" class="update-link badge badge-dark mb-1 mr-2">Update</a>
+                                        <a href="{% url 'artwork' %}" class="remove-item badge badge-dark mb-1" id="remove_{{ item.item_id }}">Remove</a>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </div>
+                                </form>
                             </td>
                             <td>
                                 {% if item.artwork.price_discounted %}
@@ -54,7 +65,7 @@
             </div>
             <hr>
             <!-- cart footer -->
-            <div class="align-right">
+            <div class="align-right mb-3">
                 <h5><strong class="heading uppercase">Cart Total: ${{ total|floatformat:2 }}</strong></h5>
                 <a href="{% url 'artwork' %}" class="btn btn-dark mb-3 mt-3">Keep Shopping</a>
                 <a href="" class="btn btn-dark">Secure Checkout</a>
@@ -62,10 +73,32 @@
 
             {% else %}
                 <p class="main-text">There are no items in the cart</p>
-                <a href="{% url 'artwork' %}" class="btn btn-dark">Keep Shopping</a>
+                <a href="{% url 'artwork' %}" class="btn btn-dark" >Keep Shopping</a>
             {% endif %}
         </div>
     </div>
 </div>
+{% endblock %}
 
+{% block postload_js %}
+<script type="text/javascript">
+    //update quantity click event
+    $(".update-link").click(function(e) {
+        let form = $(this).prev(".update-form");
+        form.submit();
+    })
+
+    //remove item click event
+    $(".remove-item").click(function(e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr("id").split('remove_')[1];
+        let url = `/cart/remove/${itemId}`;
+        let data = {'csrfmiddlewaretoken': csrfToken,};
+
+        $.post(url, data)
+         .done(function() {
+            location.reload();
+        });
+    })    
+</script>
 {% endblock %}
