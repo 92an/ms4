@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="heading capitalize text-center">shopping chart</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
+                <div class="table-responsive">
+
+                </div>
+            {% else %}
+                <p class="main-text">There are no items in the cart</p>
+                <a href="{% url 'artwork' %}" class="btn btn-dark">Keep Shopping</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
