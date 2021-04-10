@@ -34,6 +34,19 @@
                     <p class="main-text">Product Price: <span class="price">${{ artworks.price }}</span></p>
                     <br>
                 {% endif %}
+                <form class="form mt-2" action="{% url 'add_to_cart' artworks.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row w-50 number-input">
+                        <h5 class="header capitalize">quantity</h5>
+                        <input class="form-control" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ artworks.id }}" id="id_quant_{{ artworks.id }}">
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <a href="{% url 'artwork' %}" class="btn btn-dark mr-4">Keep Shopping</a>
+                        <input type="submit" class="btn btn-dark" value="Add to Cart">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
