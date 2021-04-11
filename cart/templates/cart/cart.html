@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
 
@@ -50,9 +51,9 @@
                             </td>
                             <td>
                                 {% if item.artwork.price_discounted %}
-                                    {{ item.total_discount }}
+                                    {{ item.artwork.price_discounted | calc_subtotal:item.quantity }}
                                 {% else %}
-                                    {{ item.total }}
+                                    {{ item.artwork.price | calc_subtotal:item.quantity}}
                                 {% endif %}
                             </td>
                         {% endfor %}
@@ -60,7 +61,7 @@
                             <td>
                             <!-- cart footer -->
                             <div class="align-right mb-3">
-                                <h5><strong class="heading uppercase">Cart Total: ${{ total|floatformat:2 }}</strong></h5>
+                                <h5><strong class="heading uppercase">Cart Total: ${{ grand_total|floatformat:2 }}</strong></h5>
                             </div> 
                             </td>
                         </tr>   
@@ -68,11 +69,14 @@
                 </table>
             </div>
             <hr>
+            <a href="{% url 'artwork' %}" class="btn btn-dark mb-3" >Keep Shopping</a>
+            <a href="{% url 'checkout' %}" class="btn btn-dark mb-3" >Checkout</a>
             {% else %}
                 <p class="main-text">There are no items in the cart</p>
                 <a href="{% url 'artwork' %}" class="btn btn-dark" >Keep Shopping</a>
             {% endif %}
         </div>
+
     </div>
 </div>
 {% endblock %}

@@ -34,11 +34,6 @@
 The deployment of this project is done on heroku and 
 the code is written using gitpod.
 
-Assuming that you have created a MongoDB account with corresponding
-shema to be used in the project. 
-
-Assuming that the critical key value pairs that are confidential 
-are stored in a env.py file that is not pushed to github.
 
 ## Preperation:
 
@@ -110,11 +105,12 @@ How to clone git reposirtories can be found [here](https://docs.github.com/en/fr
 * Python
     * For dependencies I refer to the requirements.txt file
 * Jinja Templating language
+* django
 
 ## Libraries and Frameworks:
-* Materialize
+* Bootstrap
 * Jquery
-* Flask
+* Django
 * Font Awesome
 
 ## Tools
@@ -123,19 +119,16 @@ How to clone git reposirtories can be found [here](https://docs.github.com/en/fr
 * Github
 * Heroku
 * Chrome Dev Tools
-* Mongo DB
 
 # Project Purpose:
 
-To create a platform to spread, share, and discuss economic ideas. 
-A place where academics and other people with interest in economics can look up terms, 
-such as models and theories, using a community-built dictionary. Enable discussion in various chatrooms dedicated to specific topics.
+Simple artstore, with the aim of inspiring amateur artists
 
 # Target Audience:
 
-* Academics
-* Economics, Finance, and Business students
-* Other people interested in economics
+* Art Enthusiasts
+* Artists
+* People looking for art to decorate their home
 
 # User stories:
 
@@ -143,57 +136,15 @@ such as models and theories, using a community-built dictionary. Enable discussi
 
 # Design
 
-The purpose of this project is to appeal to an academic side, 
-so I chose a grayscale theme, with simple buttons to give a 
-text/bookish feeling. A light grey background on the body making 
-the white cards pop like papers on a desk. It has links to 
-economics resources at the bottom rather than generic social 
-media links, sticking to the theming. Images reflect economic 
-nature, such as charts, banks, and trading. The homepage was made 
-in an effort to inspire economic reasoning by providing some 
-wisdom from famous thinkers.
+Simple black and white layout to not create visual overload when looking at artwork.
+This is the case as most art can have rather explosive colors, therefore I was going for a more
+neutral look in the website as to not draw away the focal point.
 
-# Future Features
-
-These features were not considered due to time constraints
-
-* more backend logic to check for admin users rather than relying on the front end Menu
-* change admin to a bolean category, to enable multiple users to be admins rather than admin name
-* more modern design on chattroom
-* Source page to link economic data from example the OECD to facilitate study.
-* adding subcategories such as Finance > Techincal analysis
-* way to contact administrators
-* way for adminstrators to contact users
-* confirmation modals for delete functions and edit functions
 
 # Testing
 
 ## Validation
 
-#### HTML
-Validated with https://validator.w3.org/
-However it does not like jinja templating language
-* [x] homepage.html
-* [x] terms.html
-* [x] chattrooms.html
-* [x] micro_chatt.html
-* [x] macro_chatt.html
-* [x] political_chatt.html
-* [x] student_chatt.html
-* [x] register.html
-* [x] login.html
-* [x] profile.html
-* [x] add_terms.html
-* [x] categories.html
-* [x] add_categories.html
-
-#### CSS
-Validated with https://jigsaw.w3.org/css-validator/
-* [x] style.css
-#### JS
-Validated with https://jshint.com/
-* [x] script.js
-* [x] chatt_refresh.js
 
 ## Responsive Testing
 Done on google chrome only and is the recomended browser
