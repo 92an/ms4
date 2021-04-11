@@ -1,0 +1,1 @@
+web: gunicorn artsey.wsgi:application
