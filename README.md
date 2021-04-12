@@ -1,4 +1,6 @@
 # This project is not complete
+I was unable to finish this project, I am sending this in knowing such.
+I hope to get a resubmission oppertunity later on.
 
 ## Table of Content
 
@@ -161,37 +163,30 @@ Done on google chrome only and is the recomended browser
 
 |Design Test|Mobile S|Mobile M|Mobile L|
 |-----------|:--------:|:--------:|:--------:|
-|homepage.html|poor|ok|ok|
-|terms.html|poor|ok|ok|
-|chattrooms.html|poor|ok|ok|
-|micro_chatt.html|poor|ok|ok|
-|macro_chatt.html|poor|ok|ok|
-|political_chatt.html|poor|ok|ok|
-|student_chatt.html|poor|ok|ok|
-|register.html|poor|ok|ok|
-|login.html|poor|ok|ok|
-|profile.html|poor|ok|ok|
-|add_terms.html|poor|ok|ok|
-|categories.html|poor|ok|ok|
-|add_categories.html|poor|ok|ok|
+|index.html||||
+|gallary.html||||
+|artwork.html||||
+|cart.html||||
+|checkout.html||||
+|profile.html||||
+|login.html||||
+|register.html||||
+
+
+
 
 <p>&nbsp;</p>
 
 |Design Test|Tablet|Laptop|Laptop L|
 |-----------|:------:|:------:|:--------:|
-|homepage.html|ok|ok|ok|
-|terms.html|ok|ok|ok|
-|chattrooms.html|ok|ok|ok|
-|micro_chatt.html|ok|ok|ok|
-|macro_chatt.html|ok|ok|ok|
-|political_chatt.html|ok|ok|ok|
-|student_chatt.html|ok|ok|ok|
-|register.html|ok|ok|ok|
-|login.html|ok|ok|ok|
-|profile.html|ok|ok|ok|
-|add_terms.html|ok|ok|ok|
-|categories.html|ok|ok|ok|
-|add_categories.ok|ok|ok|ok|
+|index.html||||
+|gallary.html||||
+|artwork.html||||
+|cart.html||||
+|checkout.html||||
+|profile.html||||
+|login.html||||
+|register.html||||
 
 <p>&nbsp;</p>
 
@@ -212,38 +207,20 @@ Tested device formats:
 
 **NOTE that is is not ideal to operate on the smalest screen.
 Though functional the is some overflow issue and is rather impractical
-on smaller screens. Though since it is expeted that the user is someone
-working on a laptop, or studying mobile devices are not the main device
-that the use might use.
+on smaller screens.
 
 ## Functionality
 
 |Function|status|
 |-----------|:------:|
-|Menubar is dynamically changing based on who is logged in|ok|
-|Only admin can see category section|ok|
-|Only admin can see all tasks in profile section to delete or edit|ok|
-|Users can only see their own terms in their profile to delete or edit|ok|
-|Register user function works|ok|
-|Login function works|ok|
-|Log out works|ok|
-|Forms have a cancel button to return|ok|
-|Terms can be added to the dictionary in the profile section|ok|
-|Terms can be updated in the dictionary in the profile section|ok|
-|Terms can be deleted from the dictionary in the profile section|ok|
-|Terms can read in the dictionary|ok|
-|User can enter chattrooms|ok|
-|User can leave chattrooms|ok|
-|User can communicate in chattrooms|ok|
-|Admin can alter all terms|ok|
-|Admin can add categories|ok|
-|Admin can delete categories|ok|
+
 
 # References:
 
 ## inspiration
 
 simple art store
+Largely inspired by boutique_ado project. Lot of code is rescaled from that and reapplied
 
 ## Images
 

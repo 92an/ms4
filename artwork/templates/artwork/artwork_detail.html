@@ -16,7 +16,7 @@
     <div class="container-fluid details-container my-4">
         <div class="row">
             <div class="col-md-6 details-image-container py-4">
-                <img src="/media/{{ artworks.image }}" alt="{{ artwork.id}}">
+                <img src="{{MEDIA_URL}}{{ artworks.image }}" alt="{{ artwork.id}}">
             </div>
             <div class="col-md-6 px-4 py-4">
                 <h2 class="heading">{{ artworks.title}}</h2>

@@ -33,7 +33,7 @@
                         {% for item in cart_items %}
                         <tr>
                             <td scope="row">
-                                <img src="/media/{{ item.artwork.image }}" alt="{{ artwork.id}}">
+                                <img src="{{MEDIA_URL}}{{ item.artwork.image }}" alt="{{ artwork.id}}">
                             </td>
                             <td>
                                 {{ item.artwork.title}}
