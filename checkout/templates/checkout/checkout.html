@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-2 mb-1">
                         <a href="{% url 'artwork_detail' item.artwork.id %}">
-                            <img class="w-100" src="{{MEDIA_URL}}{{ item.artwork.image }}" alt="{{ artwork.title }}">
+                            <img class="w-100" src="{{ item.artwork.image.url }}" alt="{{ artwork.title }}">
                         </a>
                     </div>
                     <div class="col-7">
