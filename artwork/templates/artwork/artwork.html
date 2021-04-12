@@ -46,7 +46,7 @@
             {% for artwork in artworks %}
             <div class="col-md-6 my-4">
                 <div class="card pb-3">
-                    <img src="{{MEDIA_URL}}{{ artwork.image }}" alt="item-image" class="card-img-top product_image">
+                    <img src="{{ artwork.image.url }}" alt="item-image" class="card-img-top product_image">
                     <h3 class="card-title heading mt-2 px-4">{{ artwork.title }}</h3>
                     {% if artwork.price_discounted %}
                     <span class="badge bg-dark text-white">On Sale</span>
