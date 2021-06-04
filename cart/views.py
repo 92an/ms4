@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
-
+from django.contrib import messages
+from artworks.models import Artwork
 
 # Create your views here.
 def view_cart(request):
@@ -8,6 +9,7 @@ def view_cart(request):
 
 def add_to_cart(request, item_id):
 
+    artwork = Artwork.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -16,6 +18,7 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
+        messages.success(request,  f"Added {Artwork.title} to your cart")
 
     request.session['cart'] = cart
     return redirect(redirect_url)
