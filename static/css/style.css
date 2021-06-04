@@ -33,6 +33,12 @@ html {
     height: 100%;
 }
 
+.message-container {
+    position: fixed;
+    top: 75px;
+    right: 15px;
+    z-index: 999999999;
+}
 
 /* Footer sticky */
 

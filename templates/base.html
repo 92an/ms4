@@ -90,7 +90,6 @@
                 <ul id="navigation_menu" class="list-inline my-3">
                     <a href="{% url 'home' %}" class="menu_row_color mx-2"><li class="list-inline-item heading uppercase">Home</li></a>
                     <a href="{% url 'artwork' %}" class="menu_row_color mx-2"><li class="list-inline-item heading uppercase">Store</li></a>
-                    <a href="#" class="menu_row_color mx-2"><li class="list-inline-item heading uppercase">Gallary</li></a>
                 </ul>
             </div>
         </div>
@@ -101,7 +100,7 @@
         {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
-                    {% include "includes/Toasts/toasts_success.html" %}
+                    {% include "includes/Toasts/toast_success.html" %}
                 {% endfor %}
             </div>
         {% endif %}
