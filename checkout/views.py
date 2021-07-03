@@ -13,23 +13,34 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    cart = request.session.get('cart', {})
-    if not cart:
-        messages.error(request, "There are no items in your cart")
-        return redirect(reverse('artwork'))
+    if request.method == "POST":
+        cart = request.session.get('cart', {})
 
-    current_cart = cart_content(request)
-    total = current_cart["grand_total"]
-    stripe_total = round(total*100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-        )
+        form_data = {
+            "full_name": request.POST["full_name"],
+            "full_name": request.POST["full_name"],
+            "full_name": request.POST["full_name"],
+            "full_name": request.POST["full_name"],
+            "full_name": request.POST["full_name"],
+            "full_name": request.POST["full_name"],
+        }   
+    else:
+        cart = request.session.get('cart', {})
+        if not cart:
+            messages.error(request, "There are no items in your cart")
+            return redirect(reverse('artwork'))
 
-    print(intent)
+        current_cart = cart_content(request)
+        total = current_cart["grand_total"]
+        stripe_total = round(total*100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            )
 
-    order_form = OrderForm()
+        order_form = OrderForm()
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
