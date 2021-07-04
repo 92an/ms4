@@ -72,14 +72,13 @@ def checkout(request):
 
         order_form = OrderForm()
 
-    template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
 
-    return render(request, template, context)
+    return render(request, 'checkout/checkout.html', context)
 
 
 def checkout_success(request, order_number):
@@ -87,14 +86,13 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f"Order successfully processed \
         your order number is the following {order_number} \
-        a confirmation will be sent to {order.mail},")
+        a confirmation will be sent to {order.email},")
 
     if "cart" in  request.session:
         del request.session["cart"] 
 
-    template = "checkout/checkout_success.html"
     context = {
-        order: order,
+        "order": order,
     }
 
-    return render(request, template, context)
+    return render(request, "checkout/checkout_success.html", context)

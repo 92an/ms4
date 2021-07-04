@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}   
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="heading capitalize text-center">Thank you</h2>
+            <hr>
+            <p class="main-text">Your order information is found below. A confirmation email will be sent to you <strong>{{ order.email }}</strong>.</p> </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <a id="Shop_button" href="{% url 'artwork' %}" class="btn btn-dark rounded-0">
+                <span class="font-weight-bold">To Shop</span>
+            </a>                     
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}
+
