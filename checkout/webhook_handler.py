@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 class StripeWH_Handler:
 
-    def _init__(self, request):
+    def __init__(self, request):
         self.request = request
 
     def handle_event(self, event):
