@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'artwork',
     'cart',
     'checkout',
-    'profiles'
+    'profiles',
 
     # other aps
     'crispy_forms',
