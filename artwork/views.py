@@ -50,10 +50,19 @@ def artwork_detail(request, artwork_id):
     return render(request, "artwork/artwork_detail.html", context)
 
 def add_artwork(request):
-    form = ArtworkForm()
-    template = "artwork/add_product.html"
-    context = {
-        "form": form
-    }
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST, request.FILES)
+        if form.is_valid():
+            artwork = form.save()
+            messages.success(request, 'Successfully added artwork!')
+            return redirect(reverse('artwork_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add artwork. Ensure that the form is valid.')
+    else:
+        form = ArtworkForm()
+        template = "artwork/add_artwork.html"
+        context = {
+            "form": form
+        }
 
     return render(request, template, context)
