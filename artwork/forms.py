@@ -1,10 +1,10 @@
 from django import forms
-from .models import Artwork, Medium'
+from .models import Artwork, Medium
 
-class ProductForm(forms.ModelForm):
+class ArtworkForm(forms.ModelForm):
 
     class Meta:
-        model = Product
+        model = Artwork
         fields = "__all__"
 
     def __init__(self, *args, **kwargs):

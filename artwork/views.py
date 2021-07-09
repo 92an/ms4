@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Artwork, Medium
+from .forms import ArtworkForm
 
 # Create your views here.
 
@@ -47,3 +48,12 @@ def artwork_detail(request, artwork_id):
     }
 
     return render(request, "artwork/artwork_detail.html", context)
+
+def add_artwork(request):
+    form = ArtworkForm()
+    template = "artwork/add_product.html"
+    context = {
+        "form": form
+    }
+
+    return render(request, template, context)
