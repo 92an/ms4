@@ -136,7 +136,21 @@ Simple artstore, with the aim of inspiring amateur artists
 
 # User stories:
 
-### See excel file
+* As an customer I want to browse the store
+* As an customer I want to filter the store based on medium
+* As an customer I want to seach the store
+* As an customer I want to add items to shopping cart
+* As an customer I want to remove items from shopping cart
+* As an customer I want login to save my information and register myself as a user
+* As an customer I want make an order and pay online
+
+## admin function
+
+* As the owner I want to be able to register products
+* As the owner I want to be able to edit products
+* As the owner I want to be able to delete products
+* As the owner I want to be able to log in/logout as admin
+
 
 # Design
 
@@ -163,14 +177,14 @@ Done on google chrome only and is the recomended browser
 
 |Design Test|Mobile S|Mobile M|Mobile L|
 |-----------|:--------:|:--------:|:--------:|
-|index.html||||
-|gallary.html||||
-|artwork.html||||
-|cart.html||||
-|checkout.html||||
-|profile.html||||
-|login.html||||
-|register.html||||
+|index.html| poor | alright| ok |
+|gallary.html| poor | alright| ok |
+|artwork.html| poor | alright| ok |
+|cart.html| poor | alright| ok |
+|checkout.html| poor | alright| ok |
+|profile.html| poor | alright| ok |
+|login.html| poor | alright| ok |
+|register.html| poor | alright| ok |
 
 
 
@@ -179,14 +193,14 @@ Done on google chrome only and is the recomended browser
 
 |Design Test|Tablet|Laptop|Laptop L|
 |-----------|:------:|:------:|:--------:|
-|index.html||||
-|gallary.html||||
-|artwork.html||||
-|cart.html||||
-|checkout.html||||
-|profile.html||||
-|login.html||||
-|register.html||||
+|index.html| ok | ok | ok |
+|gallary.html| ok | ok | ok |
+|artwork.html| ok | ok | ok |
+|cart.html| ok | ok | ok |
+|checkout.html| ok | ok | ok |
+|profile.html| ok | ok | ok |
+|login.html| ok | ok | ok |
+|register.html| ok | ok | ok |
 
 <p>&nbsp;</p>
 
