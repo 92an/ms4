@@ -1,5 +1,4 @@
 Hello {{ order.full_name }}!
-
 This is a confirmation of your order from Artsey artshop. You can see your order information below:
 
 Order Number: {{ order.order_number }}

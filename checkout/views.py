@@ -70,7 +70,7 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
-                except Artwork.DoesNotExist:
+                except artwork.DoesNotExist:
                     messages.error(request, (
                         "One of your products in the bag cannot be found. Call us for assistance!"
                     ))
