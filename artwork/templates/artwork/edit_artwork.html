@@ -15,18 +15,18 @@
         <div class="col">
             <hr>
             <h2 class="heading capitalize text-center">Artwork Store Management</h2>
-            <h5 class="heading capitalize text-center">Add Artwords</h5>
+            <h5 class="heading capitalize text-center">Edit Artwords</h5>
             <hr>
         </div>        
     </div>
     <div class="row">
         <div class="col">
-            <form method="POST" action="{% url 'add_artwork' %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_artwork' artwork_id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="mb-4 mt-4">
                     <a class="btn btn-dark rounded-0" href="{% url 'artwork' %}">Cancel</a>
-                    <button class="btn btn-dark rounded-0" type="submit">Add Artwork</button>
+                    <button class="btn btn-dark rounded-0" type="submit">Edit Artwork</button>
                 </div>
             </form>
         </div>        
