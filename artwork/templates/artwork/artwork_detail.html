@@ -27,7 +27,7 @@
                 <h5 class="heading">Canvas Type: {{ artworks.canvas_type}}</h5>
                 <h5 class="heading">Canvas Size: {{ artworks.canvas_dimension}}</h5>
                 <br>
-                {% if artwork.price_discounted %}
+                {% if artworks.price_discounted %}
                     <p class="main-text">Product Price: <span class="disscounted">${{ artworks.price }}</span></p>
                     <p class="main-text">Product Discounted Price: <span class="price">${{ artworks.price_discounted }}</span></p>                    
                 {% else %}

@@ -96,5 +96,5 @@ def delete_artwork(request, artwork_id):
 
     artworks = get_object_or_404(Artwork, pk=artwork_id)
     artworks.delete()
-    messages.success(request, 'Artwork deleted!')
+    messages.success(request, f'Artwork {artworks.title} deleted !')
     return redirect(reverse('artwork'))
