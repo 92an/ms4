@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Artwork, Medium
 from .forms import ArtworkForm
@@ -49,7 +50,12 @@ def artwork_detail(request, artwork_id):
 
     return render(request, "artwork/artwork_detail.html", context)
 
+"""Below are the views for add, edit and delete"""
+@login_required
 def add_artwork(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES)
         if form.is_valid():
@@ -67,7 +73,11 @@ def add_artwork(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_artwork(request, artwork_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
     artworks = get_object_or_404(Artwork, pk=artwork_id)
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES, instance=artworks)
@@ -89,10 +99,11 @@ def edit_artwork(request, artwork_id):
 
     return render(request, template, context)
 
+@login_required
 def delete_artwork(request, artwork_id):
-    # if not request.user.is_superuser:
-    #     messages.error(request, 'Sorry, only store owners can do that.')
-    #     return redirect(reverse('home'))
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     artworks = get_object_or_404(Artwork, pk=artwork_id)
     artworks.delete()
