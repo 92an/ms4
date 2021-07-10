@@ -161,9 +161,6 @@ neutral look in the website as to not draw away the focal point.
 
 # Testing
 
-## Validation
-
-
 ## Responsive Testing
 Done on google chrome only and is the recomended browser
 
@@ -229,10 +226,28 @@ on smaller screens.
 |-----------|:------:|
 |menu links work|ok|
 |account profile menu adapts if you are logged in or not|ok|
+|can search in shop|ok|
+|can filter in shop|ok|
+|can view artwork details|ok|
+|can add items to cart|ok|
+|can remove items from cart|ok|
+|toas messages work|ok|
+|can submitt stripe payment|ok|
+|records order hostory on user profile|ok|
+|can submitt info to user profile|ok|
+|form validation|ok|
+|can add artwork as admin|ok|
+|can delete artwork as admin|ok|
+|can edit artwork as admin|ok|
+|prevents non admin from doing tampering with store items|ok|
+|user can register, log in and log out|ok|
 
 ## Functionality(lack of time)
 
 * user should be able to submitt reviews; right now only the admin can put reviews on there
+* image in add artwork is sloppy since it does not display it but since it is mandetory and not visible to customers not a priority
+* Future gallary feature would be nice.
+
 
 # References:
 
