@@ -223,11 +223,16 @@ Tested device formats:
 Though functional the is some overflow issue and is rather impractical
 on smaller screens.
 
-## Functionality
+## Functionality Manual testing
 
 |Function|status|
 |-----------|:------:|
+|menu links work|ok|
+|account profile menu adapts if you are logged in or not|ok|
 
+## Functionality(lack of time)
+
+* user should be able to submitt reviews; right now only the admin can put reviews on there
 
 # References:
 

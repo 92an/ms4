@@ -88,3 +88,13 @@ def edit_artwork(request, artwork_id):
     }
 
     return render(request, template, context)
+
+def delete_artwork(request, artwork_id):
+    # if not request.user.is_superuser:
+    #     messages.error(request, 'Sorry, only store owners can do that.')
+    #     return redirect(reverse('home'))
+
+    artworks = get_object_or_404(Artwork, pk=artwork_id)
+    artworks.delete()
+    messages.success(request, 'Artwork deleted!')
+    return redirect(reverse('artwork'))
