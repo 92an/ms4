@@ -43,7 +43,9 @@
                     <br>
                     <div class="form-row">
                         <a href="{% url 'artwork' %}" class="btn btn-dark mr-4">Keep Shopping</a>
+                        {% if request.user.is_authenticated %}
                         <input type="submit" class="btn btn-dark" value="Add to Cart">
+                        {% endif %}
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
