@@ -56,7 +56,7 @@
                             <p class="mb-0 text-black font-weight-bold">{{ item.artwork.titel }}</p>
                         </div>
                         <div class="col">  
-                            {% if item.price_discounted %}
+                            {% if item.artwork.price_discounted %}
                                 <p class="mb-0">{{ item.quantity }} @ ${{ item.artwork.price_discounted }} each</p> 
                             {% else %}
                                 <p class="mb-0">{{ item.quantity }} @ ${{ item.artwork.price }} each</p>
