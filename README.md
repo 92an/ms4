@@ -250,6 +250,8 @@ on smaller screens.
 * user should be able to submitt reviews; right now only the admin can put reviews on there
 * image in add artwork is sloppy since it does not display it but since it is mandetory and not visible to customers not a priority
 * Future gallary feature would be nice.
+* There is a bug in the totals where the line items dont sum properly so the confirmation does not give the grand total.
+It is commented out in the code.
 
 
 # References:
