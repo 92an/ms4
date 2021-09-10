@@ -38,6 +38,9 @@ I hope to get a resubmission oppertunity later on.
 The deployment of this project is done on heroku and 
 the code is written using gitpod.
 
+ADMIN USER: testuser
+ADMIN PASSWORD: Testing92
+
 
 ## Preperation:
 
