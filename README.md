@@ -1,7 +1,3 @@
-# This project is not complete
-I was unable to finish this project, I am sending this in knowing such.
-I hope to get a resubmission oppertunity later on.
-
 ## Table of Content
 
 - [Deployment:](#Deployment)
@@ -245,7 +241,7 @@ on smaller screens.
 |prevents non admin from doing tampering with store items|ok|
 |user can register, log in and log out|ok|
 
-## Functionality(lack of time)
+## Functionality
 
 * user should be able to submitt reviews; right now only the admin can put reviews on there
 * image in add artwork is sloppy since it does not display it but since it is mandetory and not visible to customers not a priority
